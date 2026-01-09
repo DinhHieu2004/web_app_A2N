@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: add2num
+
+server:
+  port: 8080
+  servlet:
+    context-path: /a2n
