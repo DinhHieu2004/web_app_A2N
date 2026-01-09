@@ -1,4 +1,7 @@
 async function calculate() {
+
+    const API_BASE_URL = "http://localhost:8080";
+
     const n1 = num1.value.trim();
     const n2 = num2.value.trim();
 
@@ -16,7 +19,7 @@ async function calculate() {
     resultBox.classList.add("d-none");
 
     try {
-        const res = await fetch("http://localhost:8080/a2n/sum", {
+        const res = await fetch(`${API_BASE_URL}/a2n/sum`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ stn1: n1, stn2: n2 })
@@ -55,6 +58,6 @@ async function calculate() {
 
     } catch (err) {
         console.error(err);
-        alert("Không kết nối được server");
+        alert("Lỗi kết nối tới máy chủ");
     }
 }
